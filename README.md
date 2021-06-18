@@ -49,6 +49,7 @@ Here's how to use __docker__ to merge a pull request to your Ruby library
 docker run --rm -it \
 -e PACKAGR_SCM_GITHUB_ACCESS_TOKEN=123456789ABCDEF \
 -e PACKAGR_SCM_PULL_REQUEST=4 \
+-e PACKAGR_SCM_REPO_FULL_NAME=AnalogJ/ruby_analogj_test \
 -e PACKAGR_RUBYGEMS_API_KEY=ASDF12345F \
 -v path/to/git/repo
 ghcr.io/packagrio/packagr:latest-ruby
@@ -67,6 +68,7 @@ directly to merge a pull request to your Python library:
 
 export PACKAGR_SCM_GITHUB_ACCESS_TOKEN=123456789ABCDEF
 export PACKAGR_SCM_PULL_REQUEST=2
+export PACKAGR_SCM_REPO_FULL_NAME=AnalogJ/pypa_analogj_test
 export PACKAGR_PYPI_USERNAME=AnalogJ
 export PACKAGR_PYPI_PASSWORD=mysupersecurepassword
 
@@ -81,7 +83,7 @@ packagr-publishr start --scm github --package_type python
 
 ### Creating a branch release
 
-If you want to just create a new release from your master branch, don't set the `PACKAGR_SCM_PULL_REQUEST` variable:
+If you want to just create a new release from your master branch, don't set the `PACKAGR_SCM_PULL_REQUEST` and `PACKAGR_SCM_REPO_FULL_NAME` variables:
 
 ```bash
 # git clone your repo, and checkout the master branch
@@ -94,6 +96,65 @@ packagr-bumpr start --scm github --package_type python
 
 # use your own language specific testing tools as usual
 tox
+
 packagr-releasr start --scm github --package_type python
 packagr-publishr start --scm github --package_type python
 ```
+
+---
+
+
+
+# Contributing
+
+If you'd like to help improve Packagr, follow the instructions in [CONTRIBUTING.md](CONTRIBUTING.md)
+
+Note that if you would like to do development without Docker, you'll also need to ensure that you have the `git2go` dependencies installed on your machine.
+You can install these dependencies by using your system's package manager.
+
+	- openssl
+	- libgit2
+	- libssh2
+
+Work your magic and then submit a pull request. We love pull requests!
+
+If you find the documentation lacking, help us out and update this README.md.
+If you don't have the time to work on Packagr, but found something we should know about, please submit an issue.
+
+## To-do List
+
+We're actively looking for pull requests in the following areas:
+
+- Packagr Engines for other languages
+	- C#
+	- Objective C
+	- Dash
+	- Java
+	- Lua
+	- Rust
+	- Scala
+	- Swift
+	- [Any others you can think of](https://libraries.io/)
+- Packagr SCM Sources
+	- GitLab
+	- Bitbucket
+	- Beanstalk
+	- Kiln
+	- Any others you can think of
+
+
+# Versioning
+
+We use SemVer for versioning. For the versions available, see the tags on this repository.
+
+# Authors
+
+Jason Kulatunga - Initial Development -  [@AnalogJ](https://github.com/AnalogJ)
+
+# License
+
+Packagr is licensed under the MIT License - see the
+[LICENSE.md](https://github.com/PackagrIO/docs/blob/master/LICENSE.md) file for details
+
+
+
