@@ -13,5 +13,3 @@ artifacts and libraries written in any language.
 Its goal is to bring automation to the packaging and deployment stage of your library release cycle.
 Packagr is incredibly flexible, and works best when implemented within a CI/CD pipeline (Github Actions, Jenkins, CircleCI, Travis, etc)
 
-
-

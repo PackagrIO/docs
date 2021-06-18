@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  packagr:
+    image: 'analogj/capsulecd-build'
+    volumes:
+      - ./bumpr:/go/src/packagrio/bumpr/
+      - ./publishr:/go/src/packagrio/publishr/
+      - ./releasr:/go/src/packagrio/releasr/
+      - ./go-common:/go/src/packagrio/go-common/
+      - ./golang_analogj_test:/source
+      - ./run.sh:/run.sh
+      - ./run.dev.sh:/run.dev.sh
+    environment:
+      - GITHUB_TOKEN
+      - PACKAGR_VERSION_BUMP_TYPE=patch
+    command: '/run.dev.sh'

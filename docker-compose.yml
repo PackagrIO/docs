@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  packagr:
+    image: 'ghcr.io/packagrio/packagr:latest-golang'
+    volumes:
+      - ./golang_analogj_test:/source
+      - ./run.sh:/run.sh
+    environment:
+      - GITHUB_TOKEN
+      - PACKAGR_VERSION_BUMP_TYPE=patch
+    command: '/run.sh'
