@@ -31,8 +31,8 @@ Packagr handles all of that (and more!) for you. It pretty much guarantees that 
 - [Bumpr](https://github.com/PackagrIO/bumpr) - is a tool to bump version files using SemVer. It natively understands metadata/version files for multiple languages and packaging specs.
 - [Releasr](https://github.com/PackagrIO/releasr) - is a tool for committing local changes & creating a tag. Natively understands metadata/version files for multiple languages, and will use the provided SemVer for tagging. (Nothing is pushed to the origin)
 - [Publishr](https://github.com/PackagrIO/publishr) - is a tool for publishing changes. It will push git changes to your SCM, uploads packages to your language package index (RubyGems/PyPi/Supermarket, etc). It will also create a Github Release with a Changelog & attached artifacts.
-- [Dependr]() - coming soon. a tool that will download your dependencies. Wraps native dependency managers, but provides consistent automation around lockfile management.
-- [Formattr]() - coming soon. a tool that will lint (and optionally format) your source code according to (customizable) language specific best-practices.
+- [Dependr]() - **coming soon.** a tool that will download your dependencies. Wraps native dependency managers, but provides consistent automation around lockfile management.
+- [Formattr]() - **coming soon.** a tool that will lint (and optionally format) your source code according to (customizable) language specific best-practices.
 
 
 # How do I start?
@@ -42,8 +42,8 @@ You can use Packagr to automate creating a new release from a pull request or fr
 ## Automated pull request processing:
 
 Here's how to use __docker__ to merge a pull request to your Ruby library
-``` bash
 
+```bash
 # git clone your repo, and checkout the branch specified in your PR.
 
 docker run --rm -it \
@@ -74,6 +74,7 @@ packagr-bumpr start --scm github --package_type python
 
 # use your own language specific testing tools as usual
 tox
+
 packagr-releasr start --scm github --package_type python
 packagr-publishr start --scm github --package_type python
 ```
