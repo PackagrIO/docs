@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/PackagrIO/docs">
-  <img width="300" alt="portfolio_view" src="https://cdn.rawgit.com/PackagrIO/docs/master/images/logo-black.png">
+  <img width="300" alt="portfolio_view" src="https://cdn.rawgit.com/PackagrIO/docs/master/images/logo/logo-black.png">
   </a>
 </p>
 
