@@ -60,8 +60,7 @@ packagr-publishr start --scm github --package_type ruby # optionally attach the 
 ```
 
 
-Or you could download the latest linux [release](https://github.com/AnalogJ/capsulecd/releases), and call CapsuleCD
-directly to merge a pull request to your Python library:
+Or you could download the latest [bumpr](https://github.com/PackagrIO/bumpr/releases), [releasr](https://github.com/PackagrIO/releasr/releases) and [publishr](https://github.com/PackagrIO/publishr/releases) releases, and call them locally to merge a pull request to your Python library:
 
 ```bash
 # git clone your repo, and checkout the branch specified in your PR.
